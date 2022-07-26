@@ -8,12 +8,15 @@ local nmap = Remap.nmap
 
 
 --MAPPINGS - NORMAL
-nnoremap("<silent> <C-f>",":silent !tmux neww tmux-sessionizer<CR>")
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+nnoremap("<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 nnoremap("<leader>pv", ":Vex<CR>")
-nnoremap("<leader><CR>", ":so ~/.config/nvim/init.vim<CR>")
-nnoremap("<leader>x", ":!chmod +x %<CR>")
+nnoremap("<leader><CR>", "<cmd>luafile %")
+nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 --MAPPINGS - VISUAL
 vnoremap("J", ":m '>+1<CR>gv=gv")
 vnoremap("K", ":m '<-2<CR>gv=gv")
 
+xnoremap("<leader>p", "\"_dP")

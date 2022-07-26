@@ -1,10 +1,10 @@
 local Remap = require('ha55ehh.keymap')
 local nnoremap = Remap.nnoremap
 
-nnoremap("<leader>pf", function()
-	require('telescope.builtin').find_files()
+nnoremap("<leader>ff", function()
+    require('telescope.builtin').find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})
 end)
-nnoremap("<leader>pw", function() 
+nnoremap("<leader>pw", function()
 	require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }
 end)
 nnoremap("<leader>pb", function()
@@ -23,5 +23,7 @@ nnoremap("<leader>gm", function()
 	require('telescope').extensions.git_worktree.create_git_worktree()
 end)
 nnoremap("<leader>ps", function()
-	require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})
+	require('telescope.builtin').grep_string({vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--hidden', '--smart-case', '-u' },  search = vim.fn.input("Grep For > ")})
 end)
+
+
