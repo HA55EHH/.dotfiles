@@ -6,6 +6,9 @@ lvim.transparent_window = true
 vim.opt.relativenumber = true
 vim.opt.colorcolumn = '80'
 
+lvim.builtin.telescope.pickers.find_files = {
+  find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+}
 
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
@@ -39,7 +42,6 @@ lvim.builtin.telescope.defaults.mappings = {
     ["<C-k>"] = actions.move_selection_previous,
   },
 }
-
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 -- lvim.builtin.which_key.mappings["t"] = {
