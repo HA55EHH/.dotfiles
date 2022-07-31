@@ -121,20 +121,20 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: Menlo
+    family: MesloLGL NF
     style: Regular
   bold:
-    family: Menlo
+    family: MesloLGL NF
     style: Bold
   italic:
-    family: Menlo
+    family: MesloLGL NF
     style: Italic
   bold_italic:
-    family: Menlo
+    family: MesloLGL NF
     style: Bold Italic
 
   # Point size
-  size: 14.0
+  size: 24.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
