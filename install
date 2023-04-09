@@ -8,7 +8,13 @@ for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do
     stow -D $folder
     stow $folder
-    echo "$folder linked."
+
+    if [ $? -eq 0 ]; then
+        echo "$folder linked successfully."
+    else
+        echo "$folder not linked."
+    fi
+
 done
 popd
 
