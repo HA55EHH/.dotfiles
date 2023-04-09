@@ -1,0 +1,29 @@
+{
+    "workspace.library": [
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/neodev.nvim/types/stable",
+        "/opt/homebrew/Cellar/neovim/0.8.3/share/nvim/runtime/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/ayu-vim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/cmp_luasnip/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/Comment.nvim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/fidget.nvim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/gitsigns.nvim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/gruvbox.nvim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/lualine.nvim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/LuaSnip/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/mason.nvim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/neodev.nvim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/nvim-cmp/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/nvim-tree.lua/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/nvim-treesitter/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/packer.nvim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/plenary.nvim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/telescope.nvim/lua",
+        "/Users/harrison/.local/share/nvim/site/pack/packer/start/which-key.nvim/lua",
+        "/Users/harrison/.dotfiles/nvim/.config/nvim/lua",
+        "${3rd}/luv/library"
+    ]
+}
