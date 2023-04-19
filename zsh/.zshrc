@@ -126,3 +126,6 @@ bindkey -s ^f ". search-dirs\n"
 alias vim="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
