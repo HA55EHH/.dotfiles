@@ -18,4 +18,8 @@ do
 done
 popd
 
+echo "Setting custom location for iTerm2 preferences"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iterm2/"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
 echo "Finished linking $DOTFILES"
