@@ -1,25 +1,39 @@
 #!/usr/bin/env zsh
+set -euo pipefail
 
-DOTFILES="$HOME/.dotfiles"
-STOW_FOLDERS="zsh,bin,tmux,alacritty"
+DOTFILES="${HOME}/.dotfiles"
+STOW_FOLDERS=(zsh bin tmux alacritty)
 
-pushd $DOTFILES
-for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
-do
-    stow -D $folder
-    stow $folder
+if [[ ! -d "$DOTFILES" ]]; then
+  print -u2 "Dotfiles directory not found: $DOTFILES"
+  exit 1
+fi
 
-    if [ $? -eq 0 ]; then
-        echo "$folder linked successfully."
-    else
-        echo "$folder not linked."
-    fi
+if ! command -v stow >/dev/null 2>&1; then
+  print -u2 "GNU stow not found in PATH"
+  exit 1
+fi
 
+pushd "$DOTFILES" >/dev/null
+
+for folder in "${STOW_FOLDERS[@]}"; do
+  if [[ ! -d "$folder" ]]; then
+    print -u2 "Skipping missing folder: $folder"
+    continue
+  fi
+
+  stow --target="$HOME" -D "$folder" || true
+  if stow --target="$HOME" "$folder"; then
+    print "$folder linked successfully."
+  else
+    print -u2 "$folder not linked."
+  fi
 done
-popd
 
-echo "Setting custom location for iTerm2 preferences"
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iterm2/"
+popd >/dev/null
+
+print "Setting custom location for iTerm2 preferences"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "${DOTFILES}/iterm2/"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 
-echo "Finished linking $DOTFILES"
+print "Finished linking $DOTFILES"
