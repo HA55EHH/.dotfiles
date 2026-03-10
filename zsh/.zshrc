@@ -13,8 +13,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
-plugins=(git zsh-autosuggestions vi-mode)
+plugins=(git zsh-autosuggestions vi-mode fzf)
 source $ZSH/oh-my-zsh.sh
+
+# fzf
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 
 # Example aliases
 alias dotfiles="nvim ~/.dotfiles"
