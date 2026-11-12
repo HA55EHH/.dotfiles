@@ -1,2 +1,2 @@
 .DS_Store
-bin/.local/bin/claude
+bin/.local/bin/**
