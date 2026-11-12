@@ -109,6 +109,7 @@ y = 0
 draw_bold_text_with_bright_colors = false
 
 [general]
+ipc_socket = true
 live_config_reload = true
 working_directory = "None"
 import = ["/Users/harrison.oneill/.config/alacritty/themes/themes/ayu_dark.yaml", "/.config/alacritty/alacritty.yml"]
